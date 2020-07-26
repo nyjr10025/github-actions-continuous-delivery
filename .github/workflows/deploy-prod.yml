@@ -1,9 +1,10 @@
 name: Production deployment
 
-  on: 
-    push: 
-      branches: 
-        - master
+on: 
+  push:
+    branches:
+      - master
+
 
   jobs: 
     build:
@@ -40,7 +41,7 @@ name: Production deployment
           env:
             AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
             AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-            
+
     Build-and-Push-Docker-Image:
       runs-on: ubuntu-latest
       needs: build
